@@ -25,18 +25,12 @@
 
   <groupId>org.apache.olingo</groupId>
   <artifactId>odata-parent</artifactId>
-  <version>4.7.0</version>
+  <version>4.7.0-mcd-1-SNAPSHOT-</version>
   <packaging>pom</packaging>
 
   <name>Olingo-OData</name>
 
   <inceptionYear>2013</inceptionYear>
-
-  <parent>
-    <groupId>org.apache</groupId>
-    <artifactId>apache</artifactId>
-    <version>16</version>
-  </parent>
 
   <licenses>
     <license>
@@ -48,11 +42,26 @@
 
   <url>http://olingo.apache.org</url>
 
+  https://github.com/mcdolding/olingo-odata4.git
+
   <scm>
-    <connection>scm:git:git://gitbox.apache.org/repos/asf/olingo-odata4.git</connection>
-    <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/olingo-odata4.git</developerConnection>
-    <url>https://gitbox.apache.org/repos/asf?p=olingo-odata4.git</url>
+    <connection>scm:git:git://github.com/mcdolding/olingo-odata4.git</connection>
+    <developerConnection>scm:git:https://github.com/mcdolding/olingo-odata4.git</developerConnection>
+    <url>https://github.com/mcdolding/olingo-odata4.git</url>
   </scm>
+
+  <distributionManagement>
+    <repository>
+      <id>sv008n-nexus</id>
+      <url>http://sv008n.infoterra-global.com/nexus/repository/releases/</url>
+      <uniqueVersion>false</uniqueVersion>
+    </repository>
+    <snapshotRepository>
+      <id>sv008n-nexus</id>
+      <url>http://sv008n.infoterra-global.com/nexus/repository/snapshots/</url>
+      <uniqueVersion>false</uniqueVersion>
+    </snapshotRepository>
+  </distributionManagement>
 
   <mailingLists>
     <mailingList>

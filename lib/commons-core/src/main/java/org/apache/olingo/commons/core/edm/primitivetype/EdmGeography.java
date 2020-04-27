@@ -19,7 +19,7 @@
 package org.apache.olingo.commons.core.edm.primitivetype;
 
 import org.apache.olingo.commons.api.edm.EdmPrimitiveTypeException;
-import org.apache.olingo.commons.api.edm.geo.Geospatial;
+import org.apache.olingo.commons.api.edm.geo.*;
 import org.apache.olingo.commons.api.edm.geo.Geospatial.Dimension;
 
 public final class EdmGeography extends AbstractGeospatialType<Geospatial> {
@@ -36,14 +36,29 @@ public final class EdmGeography extends AbstractGeospatialType<Geospatial> {
 
   @Override
   protected <T> T internalValueOfString(final String value, final Boolean isNullable, final Integer maxLength,
-      final Integer precision, final Integer scale, final Boolean isUnicode, final Class<T> returnType)
+                                        final Integer precision, final Integer scale, final Boolean isUnicode, final Class<T> returnType)
           throws EdmPrimitiveTypeException {
     throw new EdmPrimitiveTypeException("Not implemented!");
   }
 
   @Override
   protected <T> String internalValueToString(final T value, final Boolean isNullable, final Integer maxLength,
-      final Integer precision, final Integer scale, final Boolean isUnicode) throws EdmPrimitiveTypeException {
+                                             final Integer precision, final Integer scale, final Boolean isUnicode) throws EdmPrimitiveTypeException {
+
+    // MCD Allow spatial types to be serialised as strings using the generic Geospatial type
+    if (value instanceof Point) {
+      return EdmGeographyPoint.getInstance().internalValueToString((Point) value, isNullable, maxLength, precision, scale, isUnicode);
+    } else if (value instanceof Polygon) {
+      return EdmGeographyPolygon.getInstance().internalValueToString((Polygon)value, isNullable, maxLength, precision, scale, isUnicode);
+    } else if (value instanceof LineString) {
+      return EdmGeographyLineString.getInstance().internalValueToString((LineString)value, isNullable, maxLength, precision, scale, isUnicode);
+    } else if (value instanceof MultiPolygon) {
+      return EdmGeographyMultiPolygon.getInstance().internalValueToString((MultiPolygon)value, isNullable, maxLength, precision, scale, isUnicode);
+    } else if (value instanceof MultiLineString) {
+      return EdmGeographyMultiLineString.getInstance().internalValueToString((MultiLineString)value, isNullable, maxLength, precision, scale, isUnicode);
+    } else if (value instanceof GeospatialCollection) {
+      return EdmGeographyCollection.getInstance().internalValueToString((GeospatialCollection)value, isNullable, maxLength, precision, scale, isUnicode);
+    }
     throw new EdmPrimitiveTypeException("Not implemented!");
   }
 }
