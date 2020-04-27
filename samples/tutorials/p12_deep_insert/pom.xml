@@ -25,7 +25,7 @@
 	<groupId>my.group.id</groupId>
 	<artifactId>DemoService-DeepInsert</artifactId>
 	<packaging>war</packaging>
-	<version>4.7.0-mcd-1-SNAPSHOT-</version>
+	<version>4.7.0-mcd-1-SNAPSHOT</version>
 
 	<name>${project.artifactId}-Webapp</name>
 
