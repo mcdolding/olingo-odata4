@@ -24,7 +24,7 @@
 
   <groupId>org.apache.olingo</groupId>
   <artifactId>odata-parent</artifactId>
-  <version>4.7.0-mcd-1</version>
+  <version>4.7.0-mcd-2-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Olingo-OData</name>
@@ -45,7 +45,7 @@
     <connection>scm:git:git://github.com/mcdolding/olingo-odata4.git</connection>
     <developerConnection>scm:git:https://github.com/mcdolding/olingo-odata4.git</developerConnection>
     <url>https://github.com/mcdolding/olingo-odata4.git</url>
-    <tag>odata-parent-4.7.0-mcd-1</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <distributionManagement>
