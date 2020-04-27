@@ -72,10 +72,12 @@
 
   <modules>
     <module>lib</module>
+    <!--
     <module>ext</module>
     <module>fit</module>
     <module>dist</module>
     <module>samples</module>
+    -->
   </modules>
 
   <properties>
