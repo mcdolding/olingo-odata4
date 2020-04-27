@@ -40,7 +40,7 @@
     </license>
   </licenses>
 
-  <url>http://olingo.apache.org</url
+  <url>http://olingo.apache.org</url>
 
   <scm>
     <connection>scm:git:git://github.com/mcdolding/olingo-odata4.git</connection>
